@@ -15,7 +15,6 @@ const Home = (props: Props) => {
   // if (statusCode) {
   //   return <Error statusCode={statusCode} />;
   // }
-  console.log(props);
 
   return (
     <div>
