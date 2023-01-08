@@ -69,3 +69,4 @@ nuut-frontend/node_modules/
 
 # Ignore master key for decrypting credentials and more.
 /nuut-backend/config/master.key
+/nuut-backend/.env
