@@ -6,7 +6,7 @@ services:
     platform: linux/x86_64
     command: --default-authentication-plugin=mysql_native_password --sql_mode=""
     environment:
-      MYSQL_ROOT_PASSWORD: otuya351227
+      MYSQL_ROOT_PASSWORD: otuya351227 # TODO: 環境変数などで管理する（そもそもdbコンテナちゃんと使われてないし、問題ないが...）
     ports:
       - "3307:3306"
 
@@ -22,21 +22,15 @@ services:
     volumes:
       - ./nuut-backend:/usr/src/app
       - ./nuut-backend/vendor/bundle:/usr/local/bundle
+      - ./cert.pem:/etc/ssl/cert.pem
     ports:
       - "8080:8080"
     depends_on:
       - db
     stdin_open: true
     tty: true
-    environment:
-      DB_USERNAME: root
-      DB_PASSWORD: otuya351227
-      DB_PORT: 3306
-      DB_HOST: db
-      RAILS_MAX_THREADS: 5
-      RAILS_ENV: development
-      CORS_ORIGINS: "localhost:3000,127.0.0.1:3000"
-      REDIS_URL: redis://redis:6379
+    env_file:
+      - ./nuut-backend/.env
 
   frontend:
     build:
