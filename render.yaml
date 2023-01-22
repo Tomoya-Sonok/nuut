@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: dictionary
+    env: ruby
+    buildCommand: "./nuut-backend/bin/render-build.sh"
+    startCommand: "bundle exec puma -C ./nuut-backend/config/puma.rb ./nuut-backend/config.ru"
+    envVars:
+      - key: RAILS_MASTER_KEY
+        sync: false
