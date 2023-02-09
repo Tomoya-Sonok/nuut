@@ -18,20 +18,26 @@ const Home = (props: Props) => {
 
   return (
     <div className="m-8">
-      <h1 className="text-4xl font-bold underline pb-4">POSTS</h1>
-      <ul>
-        {!props.posts
-          ? null
-          : props.posts.map((post, index) => {
+      <h1 className="text-4xl font-medium text-center">
+        nuut 〜食品成分データ検索アプリ〜
+      </h1>
+      {props.posts && (
+        <>
+          <h1 className="text-4xl font-bold underline pb-4">POSTS</h1>
+          <ul>
+            {props.posts.map((post, index) => {
               return <li key={index}>{post.title}</li>;
             })}
-      </ul>
+          </ul>
+        </>
+      )}
     </div>
   );
 };
 
 export default Home;
 
+/*
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
   // try {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/posts`);
@@ -47,3 +53,4 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
   //   };
   // }
 };
+*/
