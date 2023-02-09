@@ -17,8 +17,8 @@ const Home = (props: Props) => {
   // }
 
   return (
-    <div>
-      <h1>POSTS</h1>
+    <div className="m-8">
+      <h1 className="text-4xl font-bold underline pb-4">POSTS</h1>
       <ul>
         {!props.posts
           ? null
