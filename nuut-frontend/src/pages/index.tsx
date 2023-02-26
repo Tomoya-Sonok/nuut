@@ -12,6 +12,10 @@ type Props = {
   ];
 };
 
+// TODO:
+// themeを頑張って切り替えられるようにするぞい。
+// そのあと、実際にコンポーネントを作り始めていい感じになったらStorybook導入もやろう！
+
 const Page = (props: Props) =>
   props.posts ? <GsspTest posts={props.posts} /> : <Home />;
 
