@@ -17,27 +17,26 @@ export const Home = () => {
   });
 
   const onSubmit: SubmitHandler<InputType> = (data) => console.log(data);
-  console.log(watch("example"));
 
   return (
-    <div className="container mx-auto py-8 px-12">
-      <h1 className="text-4xl leading-normal font-medium text-center pt-4 pb-8">
+    <div className="container mx-auto xs:py-2 xs:px-4 sm:py-8 sm:px-12">
+      <h1 className="xs:text-xl sm:text-4xl leading-normal font-medium text-center pt-4 pb-8">
         nuut
         <br /> 〜食品成分検索アプリ〜
       </h1>
-      <p className="w-3/4 mx-auto lg:w-1/2">
+      <p className="mx-auto sm:w-3/4 lg:w-1/2">
         ようこそ！
         <br />
         nuut（ヌート）とは、食品に含まれる成分をより手軽に効率よく調べることができるアプリです。
         文部科学省が5年ごとに更新・公開している「日本食品標準成分表」（現在は2020年版の八訂が最新）に準拠しているため、信頼できる情報源としてお使いいただけます。
       </p>
-      <div className="w-1/2 pt-8 mx-auto">
+      <div className="mx-auto pt-8 sm:w-1/2 lg:w-1/3">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-control">
             <div className="input-group">
               <input
                 type="text"
-                placeholder="検索する食品名を入力してください"
+                placeholder="食品名を入力してください"
                 className="input input-bordered w-full"
                 defaultValue=""
                 {...register("example")}
@@ -85,41 +84,53 @@ export const Home = () => {
           )}
         </form>
       </div>
-      <div className="w-3/4 pt-8 mx-auto lg:w-1/2">
+      <div className="mx-auto pt-8 sm:w-3/4 lg:w-1/2">
         <p className="pb-4">検索履歴</p>
-        <div className="overflow-x-auto">
+        <div className="w-full">
           <table className="table w-full">
             {/* head */}
             <thead>
               <tr>
-                <th className="text-base text-white bg-primary border-base-200 border-b-2">
-                  食品名
-                </th>
-                <th className="text-base text-white bg-primary border-base-200 border-b-2">
-                  検索回数
-                </th>
+                <th className="text-base text-white bg-primary">食品名</th>
+                <th className="text-base text-white bg-primary">検索回数</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="w-full">
               {/* row 1 */}
               <tr className="hover">
-                <td>肉類/＜畜肉類＞/ぶた</td>
-                <td>７回</td>
+                <td className="block border border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
+                  肉類/＜畜肉類＞/ぶた
+                </td>
+                <td className="border border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
+                  ７回
+                </td>
               </tr>
               {/* row 2 */}
               <tr className="hover">
-                <td>豆類/だいず</td>
-                <td>５回</td>
+                <td className="block border border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
+                  豆類/だいず
+                </td>
+                <td className="border border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
+                  ５回
+                </td>
               </tr>
               {/* row 3 */}
               <tr className="hover">
-                <td>肉類/＜鳥肉類＞/にわとり</td>
-                <td>２回</td>
+                <td className="block border border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
+                  肉類/＜鳥肉類＞/にわとり肉類/＜鳥肉類＞/にわとり肉類/＜鳥肉類＞/にわとり
+                </td>
+                <td className="border border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
+                  ２回
+                </td>
               </tr>
               {/* row 4 */}
-              <tr className=" hover">
-                <td>野菜類/こまつな</td>
-                <td>１回</td>
+              <tr className="hover">
+                <td className="block border border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
+                  野菜類/こまつな
+                </td>
+                <td className="border border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
+                  １回
+                </td>
               </tr>
             </tbody>
           </table>
