@@ -10,7 +10,6 @@ export const Home = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<InputType>({
     resolver: zodResolver(InputSchema),
@@ -19,7 +18,7 @@ export const Home = () => {
   const onSubmit: SubmitHandler<InputType> = (data) => console.log(data);
 
   return (
-    <div className="container mx-auto xs:py-2 xs:px-4 sm:py-8 sm:px-12">
+    <div className="font-kosugimaru container mx-auto xs:py-2 xs:px-4 sm:py-8 sm:px-12">
       <h1 className="xs:text-xl sm:text-4xl leading-normal font-medium text-center pt-4 pb-8">
         nuut
         <br /> 〜食品成分検索アプリ〜
@@ -28,7 +27,7 @@ export const Home = () => {
         ようこそ！
         <br />
         nuut（ヌート）とは、食品に含まれる成分をより手軽に効率よく調べることができるアプリです。
-        文部科学省が5年ごとに更新・公開している「日本食品標準成分表」（現在は2020年版の八訂が最新）に準拠しているため、信頼できる情報源としてお使いいただけます。
+        文部科学省が５年ごとに更新・公開している「日本食品標準成分表」（現在は２０２０年版の八訂が最新）に準拠しているため、信頼できる情報源としてお使いいただけます。
       </p>
       <div className="mx-auto pt-8 sm:w-1/2 lg:w-1/3">
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -87,7 +86,7 @@ export const Home = () => {
       <div className="mx-auto pt-8 sm:w-3/4 lg:w-1/2">
         <p className="pb-4">検索履歴</p>
         <div className="w-full">
-          <table className="table w-full">
+          <table className="table w-full border-separate border-spacing-0">
             {/* head */}
             <thead>
               <tr>
