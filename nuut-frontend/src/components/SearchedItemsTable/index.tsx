@@ -13,38 +13,38 @@ export const SearchedItemsTable = () => {
           </thead>
           <tbody className="w-full">
             {/* row 1 */}
-            <tr className="hover">
-              <td className="block border border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
+            <tr className="hover cursor-pointer">
+              <td className="block border border-r-0 border-b-0 border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
                 肉類/＜畜肉類＞/ぶた
               </td>
-              <td className="border border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
+              <td className="border border-l-0 border-b-0 border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
                 ７回
               </td>
             </tr>
             {/* row 2 */}
-            <tr className="hover">
-              <td className="block border border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
+            <tr className="hover cursor-pointer">
+              <td className="block border border-r-0 border-b-0 border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
                 豆類/だいず
               </td>
-              <td className="border border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
+              <td className="border border-l-0  border-b-0 border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
                 ５回
               </td>
             </tr>
             {/* row 3 */}
-            <tr className="hover">
-              <td className="block border border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
+            <tr className="hover cursor-pointer">
+              <td className="block border border-r-0 border-b-0 border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
                 肉類/＜鳥肉類＞/にわとり肉類/＜鳥肉類＞/にわとり肉類/＜鳥肉類＞/にわとり
               </td>
-              <td className="border border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
+              <td className="border border-l-0 border-b-0 border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
                 ２回
               </td>
             </tr>
             {/* row 4 */}
-            <tr className="hover">
-              <td className="block border border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
+            <tr className="hover cursor-pointer">
+              <td className="block border border-r-0 border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
                 野菜類/こまつな
               </td>
-              <td className="border border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
+              <td className="border border-l-0 border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
                 １回
               </td>
             </tr>

@@ -12,13 +12,13 @@ export const Home = () => {
         ようこそ！
         <br />
         nuut（ヌート）とは、食品に含まれる成分をより手軽に効率よく調べることができるアプリです。
-        文部科学省が５年ごとに更新・公開している「日本食品標準成分表」（現在は２０２０年版の八訂が最新）に準拠しているため、信頼できる情報源としてお使いいただけます。
+        文部科学省が5年ごとに更新・公開している「日本食品標準成分表」（現在は2020年版の八訂が最新）に準拠しているため、信頼できる情報源としてお使いいただけます。
       </p>
       <SearchBox />
       <SearchedItemsTable />
       <footer className="footer footer-center pt-16 bg-base-100 text-base-content">
         <div>
-          <p>©︎ 2023 nuut. All rights reserved.</p>
+          <p>&copy; 2023 nuut. All rights reserved.</p>
         </div>
       </footer>
     </div>
