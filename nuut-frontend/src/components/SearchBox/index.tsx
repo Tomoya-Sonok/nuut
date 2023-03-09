@@ -23,7 +23,7 @@ export const SearchBox = () => {
               placeholder="食品名を入力してください"
               className="input input-bordered w-full"
               defaultValue=""
-              {...register("example")}
+              {...register("foodName")}
             />
             <button
               type="submit"
@@ -46,7 +46,7 @@ export const SearchBox = () => {
             </button>
           </div>
         </div>
-        {errors.example && (
+        {errors.foodName && (
           <div className="alert alert-error shadow-lg mt-2 p-2">
             <div>
               <svg
@@ -62,7 +62,7 @@ export const SearchBox = () => {
                   d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              <span>{errors.example.message}</span>
+              <span>{errors.foodName.message}</span>
             </div>
           </div>
         )}
