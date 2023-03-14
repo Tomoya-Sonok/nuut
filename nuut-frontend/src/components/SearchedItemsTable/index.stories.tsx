@@ -7,6 +7,15 @@ type Story = ComponentStoryObj<T>;
 export default {
   title: "SearchedItemsTable",
   component: SearchedItemsTable,
+  argTypes: {
+    sortType: {
+      control: { type: "radio" },
+      options: ["検索日時ソート", "検索回数ソート"],
+    },
+  },
+  args: {
+    sortType: "検索日時ソート",
+  },
 } as ComponentMeta<T>;
 
 export const Default: Story = {};
