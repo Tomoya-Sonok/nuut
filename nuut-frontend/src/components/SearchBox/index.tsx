@@ -27,6 +27,7 @@ export const SearchBox = () => {
             />
             <button
               type="submit"
+              name="searchButton"
               className="btn btn-square bg-primary border-transparent hover:bg-primary hover:border-transparent"
             >
               <svg

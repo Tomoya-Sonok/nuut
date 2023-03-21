@@ -1,19 +1,21 @@
-import type { ComponentStoryObj, ComponentMeta } from "@storybook/react";
+import type { StoryObj, Meta } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
 import { SearchBox } from ".";
 
 type T = typeof SearchBox;
-type Story = ComponentStoryObj<T>;
+type Story = StoryObj<T>;
 
 export default {
   title: "SearchBox",
   component: SearchBox,
-  argTypes: {
-    textbox: {
-      control: { type: "text" },
-    },
-  },
-} as ComponentMeta<T>;
+  argTypes: {},
+} as Meta<T>;
 
 export const Default: Story = {};
 
-export const WithError: Story = {};
+export const WithError: Story = {
+  play: async ({ canvasElement }) => {
+    const { getByRole } = within(canvasElement);
+    await userEvent.click(getByRole("button", { name: "searchButton" }));
+  },
+};

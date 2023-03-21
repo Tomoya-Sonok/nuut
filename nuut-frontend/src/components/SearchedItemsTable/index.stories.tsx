@@ -1,21 +1,48 @@
-import type { ComponentStoryObj, ComponentMeta } from "@storybook/react";
+import type { StoryObj, Meta } from "@storybook/react";
 import { SearchedItemsTable } from ".";
 
 type T = typeof SearchedItemsTable;
-type Story = ComponentStoryObj<T>;
+type Story = StoryObj<T>;
 
 export default {
   title: "SearchedItemsTable",
   component: SearchedItemsTable,
   argTypes: {
-    sortType: {
+    howToSort: {
       control: { type: "radio" },
-      options: ["検索日時ソート", "検索回数ソート"],
+      options: ["sortByDays", "sortByCount"],
     },
   },
   args: {
-    sortType: "検索日時ソート",
+    howToSort: "sortByDays",
+    setHowToSort: () => {},
+    sortFoodList: () => [
+      {
+        id: 1,
+        name: "肉類/＜畜肉類＞/ぶた",
+        daysSinceSearched: 3,
+        count: 7,
+      },
+      {
+        id: 2,
+        name: "豆類/だいず",
+        daysSinceSearched: 4,
+        count: 5,
+      },
+      {
+        id: 3,
+        name: "肉類/＜鳥肉類＞/にわとり",
+        daysSinceSearched: 6,
+        count: 2,
+      },
+      {
+        id: 4,
+        name: "野菜類/こまつな",
+        daysSinceSearched: 1,
+        count: 1,
+      },
+    ],
   },
-} as ComponentMeta<T>;
+} as Meta<T>;
 
 export const Default: Story = {};

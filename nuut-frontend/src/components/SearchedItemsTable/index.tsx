@@ -39,10 +39,10 @@ export const SearchedItemsTable = ({
             {sortFoodList(howToSort).map((food) => {
               return (
                 <tr className="hover cursor-pointer" key={food.id}>
-                  <td className="block border border-r-0 border-t-0 border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
+                  <td className="block border border-r-0 border-t-0 border-base-200 md:w-96 lg:w-[21rem] xl:w-[29rem] 2xl:w-[38rem] truncate">
                     {food.name}
                   </td>
-                  <td className="border border-l-0 border-t-0 border-base-200 pl-8 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
+                  <td className="border border-l-0 border-t-0 border-base-200 pl-8 md:w-96 lg:w-[21rem] xl:w-[29rem] 2xl:w-[38rem] truncate">
                     {howToSort === "sortByDays"
                       ? `${food.daysSinceSearched} 日前`
                       : `${food.count} 回`}
