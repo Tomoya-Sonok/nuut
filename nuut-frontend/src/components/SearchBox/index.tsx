@@ -15,7 +15,7 @@ export const SearchBox = () => {
 
   return (
     <div className="mx-auto pt-8 sm:w-1/2 lg:w-1/3">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className="h-16" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control">
           <div className="input-group">
             <input
