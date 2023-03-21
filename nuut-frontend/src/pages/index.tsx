@@ -1,6 +1,6 @@
 // import Error from "next/error";
 import { GetServerSideProps } from "next";
-import { Home } from "@/components/Home";
+import { SearchFood } from "@/components/SearchFood";
 import { GsspTest } from "@/components/GsspTest";
 
 type Props = {
@@ -13,7 +13,7 @@ type Props = {
 };
 
 const Page = (props: Props) =>
-  props.posts ? <GsspTest posts={props.posts} /> : <Home />;
+  props.posts ? <GsspTest posts={props.posts} /> : <SearchFood />;
 
 // TODO: エラーハンドリングの追加
 // if (statusCode) {

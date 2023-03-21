@@ -1,7 +1,17 @@
-import { useSearchedItemsTable } from "./useSearchedItemsTable";
+import { foodList } from "@/lib/type";
+import { SORT_METHODS } from "@/lib/constants";
 
-export const SearchedItemsTable = () => {
-  const { foodList } = useSearchedItemsTable({});
+type Props = {
+  howToSort: string;
+  setHowToSort: React.Dispatch<React.SetStateAction<string>>;
+  sortFoodList: (howToSort: string) => foodList;
+};
+
+export const SearchedItemsTable = ({
+  howToSort,
+  setHowToSort,
+  sortFoodList,
+}: Props) => {
   return (
     <div className="mx-auto pt-8 sm:w-3/4 lg:w-1/2">
       <p className="pb-4">検索履歴</p>
@@ -11,24 +21,31 @@ export const SearchedItemsTable = () => {
             <tr>
               <th className="text-base text-white bg-primary">食品名</th>
               <th className="text-base text-white bg-primary">
-                <select className="select bg-opacity-0">
-                  <option value="sortByDays" selected>
-                    日数
-                  </option>
-                  <option value="sortByCount">回数</option>
+                <select
+                  value={howToSort}
+                  onChange={(e) => setHowToSort(e.target.value)}
+                  className="select bg-opacity-0"
+                >
+                  {SORT_METHODS.map((v, i) => (
+                    <option key={i} value={v.value}>
+                      {v.label}
+                    </option>
+                  ))}
                 </select>
               </th>
             </tr>
           </thead>
           <tbody className="w-full">
-            {foodList.map((food) => {
+            {sortFoodList(howToSort).map((food) => {
               return (
                 <tr className="hover cursor-pointer" key={food.id}>
                   <td className="block border border-r-0 border-t-0 border-base-200 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
                     {food.name}
                   </td>
                   <td className="border border-l-0 border-t-0 border-base-200 pl-8 w-60 sm:w-80 md:w-96 lg:w-[30rem] 2xl:w-[38rem] truncate">
-                    {food.count} 回
+                    {howToSort === "sortByDays"
+                      ? `${food.daysSinceSearched} 日前`
+                      : `${food.count} 回`}
                   </td>
                 </tr>
               );

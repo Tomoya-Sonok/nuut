@@ -1,6 +1,6 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { InputSchema, InputType } from "@/lib/schema/Home/schema";
+import { InputSchema, InputType } from "@/lib/schema/SearchFood/schema";
 
 export const SearchBox = () => {
   const {
