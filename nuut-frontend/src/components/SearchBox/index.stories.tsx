@@ -16,6 +16,8 @@ export const Default: Story = {};
 export const WithError: Story = {
   play: async ({ canvasElement }) => {
     const { getByRole } = within(canvasElement);
-    await userEvent.click(getByRole("button", { name: "searchButton" }));
+    await userEvent.click(getByRole("button"));
+    await userEvent.tab();
+    await userEvent.tab();
   },
 };

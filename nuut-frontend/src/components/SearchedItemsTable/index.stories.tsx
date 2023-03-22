@@ -1,5 +1,7 @@
 import type { StoryObj, Meta } from "@storybook/react";
 import { SearchedItemsTable } from ".";
+import { foodList } from "@/lib/type";
+import { FOOD_LIST } from "@/lib/constants";
 
 type T = typeof SearchedItemsTable;
 type Story = StoryObj<T>;
@@ -12,36 +14,27 @@ export default {
       control: { type: "radio" },
       options: ["sortByDays", "sortByCount"],
     },
+    setHowToSort: { control: { type: null } },
   },
   args: {
     howToSort: "sortByDays",
-    setHowToSort: () => {},
-    sortFoodList: () => [
-      {
-        id: 1,
-        name: "肉類/＜畜肉類＞/ぶた",
-        daysSinceSearched: 3,
-        count: 7,
-      },
-      {
-        id: 2,
-        name: "豆類/だいず",
-        daysSinceSearched: 4,
-        count: 5,
-      },
-      {
-        id: 3,
-        name: "肉類/＜鳥肉類＞/にわとり",
-        daysSinceSearched: 6,
-        count: 2,
-      },
-      {
-        id: 4,
-        name: "野菜類/こまつな",
-        daysSinceSearched: 1,
-        count: 1,
-      },
-    ],
+    setHowToSort: () => [],
+    sortFoodList: (sortMethod: string): foodList => {
+      switch (sortMethod) {
+        // 経過日数ソートの場合
+        case "sortByDays":
+          return FOOD_LIST.sort((a, b) =>
+            a.daysSinceSearched < b.daysSinceSearched ? -1 : 1
+          );
+        // 検索回数ソートの場合
+        case "sortByCount":
+          return FOOD_LIST.sort((a, b) => (a.count > b.count ? -1 : 1));
+        default:
+          return FOOD_LIST.sort((a, b) =>
+            a.daysSinceSearched < b.daysSinceSearched ? -1 : 1
+          );
+      }
+    },
   },
 } as Meta<T>;
 

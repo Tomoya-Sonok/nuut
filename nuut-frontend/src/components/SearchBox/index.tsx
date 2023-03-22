@@ -11,11 +11,13 @@ export const SearchBox = () => {
     resolver: zodResolver(InputSchema),
   });
 
-  const onSubmit: SubmitHandler<InputType> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<InputType> = (data) => {
+    // console.log(data);
+  };
 
   return (
     <div className="mx-auto pt-8 sm:w-1/2 lg:w-1/3">
-      <form className="h-16" onSubmit={handleSubmit(onSubmit)}>
+      <form className="h-24" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control">
           <div className="input-group">
             <input
