@@ -4,7 +4,7 @@ import { FOOD_LIST } from "@/lib/constants";
 
 type Props = {};
 
-export function useSearchFood({}: Props) {
+export function useSearchedItemsTable({}: Props) {
   const [howToSort, setHowToSort] = useState<string>("sortByDays");
   const sortFoodList = (sortMethod: string): foodList => {
     switch (sortMethod) {

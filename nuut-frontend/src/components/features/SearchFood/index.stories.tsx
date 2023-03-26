@@ -1,12 +1,12 @@
 import type { StoryObj, Meta } from "@storybook/react";
-import { SearchedItemsTable } from ".";
+import { SearchFood } from ".";
 
-type T = typeof SearchedItemsTable;
+type T = typeof SearchFood;
 type Story = StoryObj<T>;
 
 export default {
-  title: "ui/SearchedItemsTable",
-  component: SearchedItemsTable,
+  title: "features/SearchFood",
+  component: SearchFood,
   argTypes: {},
   args: {},
 } as Meta<T>;

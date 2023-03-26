@@ -1,17 +1,14 @@
-import { foodList } from "@/lib/type";
 import { SORT_METHODS } from "@/lib/constants";
+import { useSearchedItemsTable } from "./useSearchedItemsTable";
 
-type Props = {
-  howToSort: string;
-  setHowToSort: React.Dispatch<React.SetStateAction<string>>;
-  sortFoodList: (howToSort: string) => foodList;
-};
+// type Props = {
+//   howToSort: string;
+//   setHowToSort: React.Dispatch<React.SetStateAction<string>>;
+//   sortFoodList: (howToSort: string) => foodList;
+// };
 
-export const SearchedItemsTable = ({
-  howToSort,
-  setHowToSort,
-  sortFoodList,
-}: Props) => {
+export const SearchedItemsTable = () => {
+  const { howToSort, setHowToSort, sortFoodList } = useSearchedItemsTable({});
   return (
     <div className="mx-auto pt-8 sm:w-3/4 lg:w-1/2">
       <p className="pb-4">検索履歴</p>

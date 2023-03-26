@@ -6,7 +6,7 @@ type T = typeof SearchBox;
 type Story = StoryObj<T>;
 
 export default {
-  title: "SearchBox",
+  title: "ui/SearchBox",
   component: SearchBox,
   argTypes: {},
 } as Meta<T>;
