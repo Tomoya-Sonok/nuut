@@ -1,5 +1,5 @@
-import { SearchBox } from "@/components/SearchBox";
-import { SearchedItemsTable } from "@/components/SearchedItemsTable";
+import { SearchBox } from "@/components/ui/SearchBox";
+import { SearchedItemsTable } from "@/components/ui/SearchedItemsTable";
 import { useSearchFood } from "./useSearchFood";
 
 export const SearchFood = () => {

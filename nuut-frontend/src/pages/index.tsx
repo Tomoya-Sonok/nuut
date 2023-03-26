@@ -1,7 +1,7 @@
 // import Error from "next/error";
 import { GetServerSideProps } from "next";
-import { SearchFood } from "@/components/SearchFood";
-import { GsspTest } from "@/components/GsspTest";
+import { SearchFood } from "@/components/features/SearchFood";
+import { GsspTest } from "@/components/features/GsspTest";
 
 type Props = {
   posts: [

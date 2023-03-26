@@ -14,11 +14,12 @@ export default {
       control: { type: "radio" },
       options: ["sortByDays", "sortByCount"],
     },
-    setHowToSort: { control: { type: null } },
+    // setHowToSort: { control: { type: null } },
+    setHowToSort: { action: "setHowToSort" },
   },
   args: {
     howToSort: "sortByDays",
-    setHowToSort: () => [],
+    // setHowToSort: () => [],
     sortFoodList: (sortMethod: string): foodList => {
       switch (sortMethod) {
         // 経過日数ソートの場合
