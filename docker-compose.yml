@@ -1,21 +1,11 @@
 version: "3"
 
 services:
-  db:
-    image: mysql:8.0.20
-    platform: linux/x86_64
-    command: --default-authentication-plugin=mysql_native_password --sql_mode=""
-    environment:
-      MYSQL_ROOT_PASSWORD: otuya351227 # TODO: 環境変数などで管理する（そもそもdbコンテナちゃんと使われてないし、問題ないが...）
-    ports:
-      - "3307:3306"
-
   redis:
     image: redis:alpine
     command: ["redis-server", "--bind", "0.0.0.0", "--port", "6379"]
     ports:
       - "6379:6379"
-
   backend:
     build:
       context: nuut-backend
@@ -25,13 +15,10 @@ services:
       - ./cert.pem:/etc/ssl/cert.pem
     ports:
       - "8080:8080"
-    depends_on:
-      - db
     stdin_open: true
     tty: true
     env_file:
       - ./nuut-backend/.env
-
   frontend:
     build:
       context: nuut-frontend
